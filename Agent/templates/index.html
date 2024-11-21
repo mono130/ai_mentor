@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>전북대 AI 멘토</title>
+    <link rel="stylesheet" href="static\style24.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts Link For Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
+  <body>
+    <div class="example-prompts">
+      <p>예시 질문:</p>
+      <button onclick="insertPrompt('오늘 저녁뭐먹을까?')">오늘 저녁뭐먹을까?</button>
+      <button onclick="insertPrompt('통계학과의 커리큘럼을 알려주세요.')">통계학과의 커리큘럼을 알려주세요.</button>
+      <button onclick="insertPrompt('선형대수학은 어떤 교수님들이 가르치시나요?')">선형대수학은 어떤 교수님들이 가르치시나요?</button>
+      <button onclick="insertPrompt('AI 기반 환자 모니터링 시스템 개발자가 되려면 어떤 강의를 들어야 하나요?')">AI 기반 환자 모니터링 시스템 개발자가 되려면 어떤 강의를 들어야 하나요?</button>
+    </div>
+    <!-- Chats container -->
+    <div class="chat-container"></div>
+    
+    <!-- Typing container -->
+    <div class="typing-container">
+      <div class="typing-content">
+        <div class="typing-textarea">
+          <textarea id="chat-input" spellcheck="false" placeholder="프롬프트를 입력하세요." required></textarea>
+          <span id="send-btn" class="material-symbols-rounded">send</span>
+        </div>
+        <div class="typing-controls">
+          <span id="theme-btn" class="material-symbols-rounded">light_mode</span>
+          <span id="delete-btn" class="material-symbols-rounded">delete</span>
+      </div>
+    </div>
+    <script src="static\script28.js"></script>
+    <script>
+      // JavaScript function to insert prompt into chat input
+      function insertPrompt(text) {
+        document.getElementById('chat-input').value = text;
+      }
+    </script>
+
+  </body>
+</html>
