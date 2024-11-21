@@ -45,7 +45,7 @@ class AllAgent(Agent.Agent):
                 {
                     "question": "그럼 그 학과의 커리큘럼 추천해줘.",
                     "chat_memory": '[{"question":"기계학습은 어느 학과에서 가르쳐?", "response":"기계학습은 통계학과에서 가르칩니다"}]',
-                    "sql_query": "SELECT 학년 , 학기, 교과목명, 수업목표  FROM info_curriculum WHERE 학과 = '통계학과' AND 학년 IN (2, 3, 4);"
+                    "sql_query": "SELECT 학년 , 학기, 교과목명, 수업목표, 권장선수과목  FROM info_curriculum WHERE 학과 = '통계학과' AND 학년 IN (2, 3, 4);"
                 },
                 {
                     "question": "너가 말한 학과에서는 무슨 과목을 가르치는거야?",
@@ -87,7 +87,7 @@ class AllAgent(Agent.Agent):
                 },
                 {
                     "question": "통계학과의 커리큘럼을 추천해주세요.",
-                    "sql_query": "SELECT 학년 , 학기, 교과목명, 수업목표  FROM info_curriculum WHERE 학과 = '통계학과' AND 학년 IN (2, 3, 4);"
+                    "sql_query": "SELECT 학년 , 학기, 교과목명, 수업목표, 권장선수과목  FROM info_curriculum WHERE 학과 = '통계학과' AND 학년 IN (2, 3, 4);"
                 },
                 {
                     "question": "차연수 교수님은 어느 학과에 계셔?",
@@ -99,15 +99,15 @@ class AllAgent(Agent.Agent):
                 },
                 {
                     "question": "AI기계결함 전문가가 되려면 어떤 강의를 들어야 하나요?. 관련 학과:  기계설계학과, 소프트웨어공학과, 항공우주공학과",
-                    "sql_query": "SELECT 교과목명, 수업목표, 학년, 학기, 학과 FROM info_curriculum WHERE 학과 IN ('기계설계학과', '소프트웨어공학과', '항공우주공학과') AND 학년 IN (2, 3, 4);"
+                    "sql_query": "SELECT 교과목명, 수업목표, 학년, 학기, 학과, 권장선수과목 FROM info_curriculum WHERE 학과 IN ('기계설계학과', '소프트웨어공학과', '항공우주공학과') AND 학년 IN (2, 3, 4);"
                 },
                 {
                     "question": "농업 빅데이터 전문가가 되려면 어떤 강의를 들어야 하나요?. 관련 학과:  스마트팜학과, 소프트웨어공학과, 컴퓨터인공지능학부, 생물산업기계공학과",
-                    "sql_query": "SELECT 교과목명, 수업목표, 학년, 학기, 학과 FROM lectures_info WHERE 학과 IN ('스마트팜', '소프트웨어공학과', '컴퓨터인공지능학부', '생물산업기계공학과') AND 학년 IN (2, 3, 4);"
+                    "sql_query": "SELECT 교과목명, 수업목표, 학년, 학기, 학과, 권장선수과목 FROM lectures_info WHERE 학과 IN ('스마트팜', '소프트웨어공학과', '컴퓨터인공지능학부', '생물산업기계공학과') AND 학년 IN (2, 3, 4);"
                 },
                 {
                     "question": "컴퓨터공학과 커리큘럼 알려줘. 관련학과: 컴퓨터인공지능학부",
-                    "sql_query": "SELECT 학년, 학기, 교과목명, 수업목표 FROM info_curriculum WHERE 학과 = '컴퓨터인공지능학부' AND 학년 IN (2, 3, 4);"
+                    "sql_query": "SELECT 학년, 학기, 교과목명, 수업목표, 권장선수과목 FROM info_curriculum WHERE 학과 = '컴퓨터인공지능학부' AND 학년 IN (2, 3, 4);"
                 },
             ]
 
