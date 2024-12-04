@@ -54,8 +54,15 @@ async def get_curriculum():
         async def generate():
             # process_questions 메서드에서 비동기적으로 응답을 받아 스트리밍
             async for response_text in question_processor.process_questions(question, history_param):
-                formatted_response = response_text.replace("\n", "<br>")
-                yield f"data: {formatted_response}\n\n"
+                if isinstance(response_text, list):
+                # 리스트 그대로 yield
+                    for text in response_text:
+                        for text2 in text:
+                            formatted_response = text2.replace("\n", "")
+                    yield f"data: {response_text}"
+                else:
+                    formatted_response = response_text.replace("\n", "<br>")
+                    yield f"data: {formatted_response}\n\n"
                 await asyncio.sleep(0.01)
             yield "data: END\n\n"
         
