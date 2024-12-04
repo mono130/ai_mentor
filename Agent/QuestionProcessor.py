@@ -49,21 +49,21 @@ class QuestionProcessor:
             print("-" * 50)
         elif assignment == '4':
             # `curriculumagent`가 여러 개의 결과를 `yield`로 반환
-            async for partial_response in self.curriculumagent(question, continuous, history):
+            async for partial_response in self.curriculumagent(question, continuous, history = None):
                 yield partial_response
             end_time = time.time()
             print(f"총 응답 시간: {(end_time - start_time) * 1000:.2f} ms")
             print("-" * 50)
         elif assignment == '5':
             # `curriculumagent`가 여러 개의 결과를 `yield`로 반환
-            async for partial_response in self.dep_curriculumagent(question, continuous, history):
+            async for partial_response in self.dep_curriculumagent(question, continuous, history = None):
                 yield partial_response
             end_time = time.time()
             print(f"총 응답 시간: {(end_time - start_time) * 1000:.2f} ms")
             print("-" * 50)
         elif assignment == '6':
             # `curriculumagent`가 여러 개의 결과를 `yield`로 반환
-            async for partial_response in self.search_curriculumagent(question, continuous, history):
+            async for partial_response in self.search_curriculumagent(question, continuous, history = None):
                 yield partial_response
             end_time = time.time()
             print(f"총 응답 시간: {(end_time - start_time) * 1000:.2f} ms")

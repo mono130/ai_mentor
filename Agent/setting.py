@@ -52,7 +52,7 @@ def load_departments_from_json(file_path):
     return departments_list
 
 # 학과명 읽어오기
-departments_file = 'data\structured_data_for_department1.json'
+departments_file = 'data\department 2.json'
 departments_list = load_departments_from_json(departments_file)
 # FAISS 인덱스 로드
-index = faiss.read_index('data\index_file_for_department1.index')
+index = faiss.read_index('data\index_file_for_department 2.index')
